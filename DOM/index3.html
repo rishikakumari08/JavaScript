@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document | chai and code</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <div class="main">
+        <li>Java Script</li>
+    </div>
+</body>
+<script>
+  function addLanguage(langName){
+    const li=document.createElement('li');
+    li.innerText=(`${langName}`);
+    document.querySelector('.main').appendChild(li)
+  }
+  addLanguage('Python');
+  addLanguage('Java')
+
+  const optimalLang=(langName)=>{
+    const li=document.createElement('li');
+    li.appendChild(document.createTextNode(langName))
+    document.querySelector('.main').appendChild(li)
+  }
+  optimalLang("Ruby")
+
+  //Edit
+  const seconfLang=document.querySelector('li:nth-child(2)')
+  const newLi=document.createElement('li')
+  newLi.textContent="mojo"
+  seconfLang.replaceWith(newLi)
+
+ //second way
+ const thirdLang=document.querySelector('li:first-child')
+ thirdLang.outerHTML="<li>Type Script</li>"
+
+
+ //remove
+ document.querySelector("li:last-child").remove()
+</script>
+</html>

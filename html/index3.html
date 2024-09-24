@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Report &#9925;</title>
+</head>
+<style>
+    #city-name {
+        height: 30px;
+        width: 200px;
+        background-color: aliceblue;
+        border-radius: 5px;
+    }
+    #search-button {
+        height: 30px;
+        width: 100px;
+    }
+</style>
+<body>
+    <h2 id="place">Weather Report of </h2>
+    <div>
+        <form action="">
+            <input type="text" name="name" id="city-name" placeholder="Enter city name" autocomplete="off">
+            <button id="search-button">search</button>
+        </form>
+    </div>
+    <div>
+        <h2 id="cityName"></h2>
+        <p id="cityTime"></p>
+        <p id="citytemp"></p>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>

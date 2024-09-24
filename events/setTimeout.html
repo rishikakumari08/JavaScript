@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Aync Fucntions</h2>
+    <button id="btn">learn more</button>
+</body>
+<script>
+    // setTimeout(function(){
+    //     console.log("hello");
+        
+    // },2000)
+
+    const changeText=()=>document.querySelector('h2').innerHTML="Hi I am here"
+
+    const change=setTimeout(changeText,2000)
+    // what if we want to stop the function which will run after some time so we can apply clearTimeout
+    document.querySelector("#btn").addEventListener('click',()=>{
+        clearInterval(change)
+        console.log("stopped");
+        
+    })
+</script>
+</html>

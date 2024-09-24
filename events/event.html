@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Learning Events</h2>
+    <div id="images" >
+        <ul id="image-section" >
+            <li ><img width="200px" id="photoshop" src="https://as1.ftcdn.net/v2/jpg/05/97/40/88/1000_F_597408852_s6lJOQl5sOTopvvWZh8gVEmIDcgbx2Xb.jpg" alt="photoshop"></li>
+            <li><img width="200px" id="god" src="https://images.alphacoders.com/281/thumb-1920-281533.jpg" alt=""></li>
+            <li><img width="200px" id="Bird" src="https://img.freepik.com/free-photo/eagle-standing-tree_23-2150536613.jpg" alt=""></li>
+            <li><img width="200px" id="animal" src="https://thumbs.dreamstime.com/b/zoo-animals-nature-background-group-together-text-area-range-elephant-zebra-bear-rhino-use-31663413.jpg" alt=""></li>
+            <li><img width="200px" id="human" src="https://howtodrawforkids.com/wp-content/uploads/2023/04/how-to-draw-a-cartoon-human.jpg" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    //Now we can apply onclick event in three ways first direct in html, second by calling the id and then apply the onclik and third is to apply eventlinstners
+
+    // document.getElementById("animal").onclick=()=>alert("animal cliked  ")
+
+    //now the onlick approach is not good when we scale the website so this not works properly
+
+    /* 
+     object elment to read
+     Type,timestamp, defaultprevented
+     target,toElement,srcElement, currentTarget
+     clientx, clinety, screenx, screeny
+     altkey, ctrlkey,  shiftkey, keycode
+    */
+    // document.getElementById("animal").addEventListener('click',function(e){
+    //     console.log(e);
+        
+    // },false)//we use this false for propagation
+
+    // //so we have two sceneroi capturing and bubling
+    // //bubling goes from iner to outer : when the propagation is false
+    // //capturing goes from outer to inner : when true
+ 
+    // document.getElementById("images").addEventListener('click',()=>{
+    //     console.log("bubling the div container");
+        
+    // },false)
+    // document.getElementById("image-section").addEventListener('click',()=>{
+    //     console.log("bubbling the ul");
+        
+    // },false)
+    // document.getElementById("god").addEventListener('click',(e)=>{
+    //     console.log("bubbling the god image");
+    //     e.stopPropagation() //this will stop the propagation
+
+    // },false)
+
+    // document.getElementById("google").addEventListener('click',function(e){
+    //     console.log("google clicked");
+        
+    //  e.preventDefault()
+    // })
+
+    //Real world scenerio
+    document.querySelector("#image-section").addEventListener('click',(e)=>{
+        // console.log(e.target.parentNode);
+        // here we are getting error that when we click on ul so all the li gets removed 
+        // const It=e.target.parentNode
+        // It.remove();
+
+        const It=e.target.tagName;
+        if(It === 'IMG'){
+            console.log(e.target.id);
+            e.target.remove()
+        }        
+    })
+
+</script>
+</html>

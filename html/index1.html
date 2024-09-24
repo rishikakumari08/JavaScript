@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+</style>
+<body>
+    
+        <h2 class="header" id="name">Rishika Kumari</h2>
+        <p class="para" id="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo fuga deleniti, velit accusamus natus dolorem iure atque rem vel eius, sint reprehenderit, commodi perspiciatis minima incidunt laborum quasi. Nihil, asperiores.</p>
+        <pre><code>console.log('Hey there')</code></pre>
+   
+    <div class="buttons">
+        <button id="Clickbutton">Click me</button>
+    </div>
+    <div id="block"></div>
+    <script src="./eventListner.js"></script>
+    <script >
+        const body= document.querySelector("body");
+        console.log(body);
+        // body.innerHTML= "<h2>Hacked</h2>" //inner html overwrites the code
+        const name=document.querySelector("#name");
+        name.innerText="Khushi"
+        const head=document.getElementById("name");
+        head.classList.remove("header")
+        const para = document.getElementById("para");
+        para.style.color = "tomato";
+        // we can set classes and attributes
+        // para.setAttribute("id","para1")
+        para.remove();
+    </script>
+</body>
+</html>

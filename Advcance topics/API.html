@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API request</title>
+</head>
+<body style="background-color: #212121; color: whitesmoke;">
+    UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const api="https://randomuser.me/api/"
+    const xhr=new XMLHttpRequest();
+    xhr.open('GET',api)
+    xhr.onreadystatechange=()=>{
+        console.log(xhr.readyState);
+        if (xhr.readyState===4) {
+           const data=JSON.parse(xhr.responseText)
+        //    now the data are coming from the api in the form of string and we want access it so we need to change the data to json format 
+           console.log(data.results[0].name.title );
+           
+            
+        }
+    }
+    xhr.send()
+</script>
+</html>
